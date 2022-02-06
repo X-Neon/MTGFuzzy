@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html style="height: 100%; overflow: auto;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MTG Fuzzy</title>
+    <link rel="stylesheet" href="bulma.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="index.js" defer></script>
+</head>
+
+<body style="background: linear-gradient(to bottom, #3f4c6b, #606c88); height: 100%; overflow: auto;">
+    <div class="hero-body">
+        <div id="app" class="container">
+            <div class="column is-4 is-offset-4">
+                <div class="level">
+                    <div class="level-item" style="flex-shrink: 1;">
+                        <img :src="image_timeout" style="width: 70%; border-radius: 4.75% / 3.5%;" />
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input id="search" class="input" type="text" placeholder="Search" v-model="search" @keydown="key">
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <div class="dropdown-menu" style="display: block; width: 100%; padding-bottom: 1rem;">
+                        <div class="dropdown-content" v-if="search.length">
+                            <a :href="r.uri" style="overflow: hidden; text-overflow: ellipsis;" class="dropdown-item" :class="{ 'is-active': selected == i }" v-for="(r,i) in results">{{ r.name }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
