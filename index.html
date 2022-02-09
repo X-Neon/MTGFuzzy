@@ -24,7 +24,7 @@
                 </div>
                 <div class="field">
                     <div class="control">
-                        <input id="search" class="input" type="text" placeholder="Search" v-model="search" @keydown="key">
+                        <input id="search" class="input" type="text" autocomplete="off" placeholder="Search" :value="search" @input="e => search = e.target.value" @keydown="key">
                     </div>
                 </div>
                 <div style="position: relative;">
