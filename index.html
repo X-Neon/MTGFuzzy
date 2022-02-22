@@ -19,7 +19,7 @@
             <div class="column is-4 is-offset-4">
                 <div class="level">
                     <div class="level-item" style="flex-shrink: 1;">
-                        <img :src="image_timeout" style="width: 70%; border-radius: 4.75% / 3.5%;" />
+                        <img v-for="i in image_timeout" :src="i" style="width: 75%; border-radius: 4.75% / 3.5%; margin-left: 10px; margin-right: 10px;" />
                     </div>
                 </div>
                 <div class="field">
