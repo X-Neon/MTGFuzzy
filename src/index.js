@@ -11,7 +11,7 @@ let app = new Vue({
     data: {
         search: "",
         selected: 0,
-        image_timeout: "back.jpg"
+        image_timeout: ["back.jpg"]
     },
     computed: {
         results: function() {
@@ -24,7 +24,7 @@ let app = new Vue({
         },
         image: function() {
             if (this.results.length == 0) {
-                return "back.jpg";
+                return ["back.jpg"];
             }
 
             return this.results[this.selected].image;
