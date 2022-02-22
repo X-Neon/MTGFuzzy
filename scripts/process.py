@@ -21,7 +21,7 @@ def main() -> None:
     legal_cards = [c for c in cards if c["multiverse_ids"]]
     names = [{"name": c["name"], "uri": c["scryfall_uri"], "image": get_card_image_uris(c)} for c in legal_cards]
 
-    with open("assets/cards.json", "w") as f:
+    with open("/tmp/mtgdeploy/cards.json", "w") as f:
         json.dump(names, f)
 
 
