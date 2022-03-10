@@ -7,6 +7,7 @@ mkdir /tmp/mtgdeploy
 cp -r assets/* /tmp/mtgdeploy
 python3 scripts/process.py
 npx esbuild src/index.js --bundle --minify --outfile=/tmp/mtgdeploy/index.js
+npx esbuild src/sw.js --bundle --minify --outfile=/tmp/mtgdeploy/sw.js
 
 git checkout gh-pages
 rm -r *

@@ -3,6 +3,10 @@
 import Vue from "vue/dist/vue.esm"
 import { Fzf, byLengthAsc } from "fzf"
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("sw.js");
+}
+
 let timer = null;
 let fzf = null;
 
