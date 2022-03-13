@@ -1,0 +1,109 @@
+:root {
+    --bg: #dfe1e6;
+    --box: white;
+    --hover: #eeeeee;
+    --active: lightblue;
+    --separator: lightgray;
+    --text: black;
+    --shadow: gray;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #171717;
+        --box: #262626;
+        --hover: #3b3b3b;
+        --active: #8c4f06;
+        --separator: #6e6e6e;
+        --text: white;
+        --shadow: #060606;
+    }
+}
+
+html {
+    min-height: 100%;
+    color: var(--text);
+}
+
+body {
+    background-color: var(--bg);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100%;
+}
+
+.card-area {
+    margin: 0px auto;
+    max-width: fit-content;
+    padding-top: 16px;
+}
+
+.card-container {
+    display: inline;
+}
+
+@media (max-width: 700px) {
+    .card-container {
+        display: block;
+    }
+}
+
+.card {
+    width: 300px;
+    border-radius: 4.75% / 3.5%;
+    margin: 20px 20px;
+    box-shadow: 0px 0px 10px var(--shadow);
+}
+
+.search {
+    margin: 0px auto;
+    max-width: 400px;
+}
+
+.input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: none;
+    padding: 0.8em 0.8em;
+    box-shadow: 0px 0px 5px var(--shadow);
+    background-color: var(--box);
+    color: inherit;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.box {
+    box-sizing: border-box;
+    background-color: var(--box);
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px var(--shadow);
+}
+
+.suggestion {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0.8em 0.8em;
+    text-decoration: none;
+    border-top: 1px solid var(--separator);
+    color: inherit;
+}
+
+.suggestion:first-of-type {
+    border-top: none;
+}
+
+.suggestion:hover {
+    background-color: var(--hover);
+}
+
+.suggestion.active {
+    background-color: var(--active);
+}
