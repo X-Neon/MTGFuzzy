@@ -1,6 +1,7 @@
 import json
 import requests
 from typing import List
+import sys
 
 
 def get_card_image_uris(card: dict) -> List[str]:
@@ -18,10 +19,10 @@ def main() -> None:
     card_uri = bulk_data["download_uri"]
     cards = requests.get(card_uri).json()
 
-    legal_cards = [c for c in cards if c["multiverse_ids"]]
+    legal_cards = [c for c in cards if c["multiverse_ids"] and not c["oversized"]]
     names = [{"name": c["name"], "uri": c["scryfall_uri"], "image": get_card_image_uris(c)} for c in legal_cards]
 
-    with open("/tmp/mtgdeploy/cards.json", "w") as f:
+    with open(sys.argv[1], "w") as f:
         json.dump(names, f)
 
 
