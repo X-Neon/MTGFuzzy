@@ -19,7 +19,7 @@
 
 <script>
     import { Fzf, byLengthAsc } from "fzf";
-    let cards = new URL("cards.dat", import.meta.url);
+    let cards = new URL("cards.json", import.meta.url);
     let back = new URL("back.jpg", import.meta.url);
 
     let timer = null;

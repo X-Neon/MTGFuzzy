@@ -1,4 +1,4 @@
 node_modules
 dist
 .parcel-cache
-src/cards.dat
+src/cards.json
