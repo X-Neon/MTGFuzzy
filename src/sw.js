@@ -29,4 +29,4 @@ async function fetch() {
     cache.put(e.request, response.clone());
     return response;
 }
-addEventListener("activate", e => e.respondWith(fetch()));
+addEventListener("fetch", e => e.respondWith(fetch()));

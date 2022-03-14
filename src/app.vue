@@ -39,7 +39,6 @@
                     return [];
                 }
 
-                console.log(this.search);
                 let finder = this.search.length <= 3 ? this.fzf.fast : this.fzf.default;
                 let found_cards = finder.find(this.search);
                 return found_cards.map(el => el.item);
