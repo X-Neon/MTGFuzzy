@@ -5,9 +5,9 @@ set -euxo pipefail
 rm -rf .parcel-cache/ dist/
 mkdir /tmp/mtgdeploy
 
-python3 scripts/process.py src/cards.dat
+python3 scripts/process.py src/cards.json
 npx parcel build --no-source-maps --dist-dir /tmp/mtgdeploy src/index.html
-rm src/cards.dat
+rm src/cards.json
 
 git checkout gh-pages
 shopt -s extglob
