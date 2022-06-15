@@ -18,7 +18,7 @@ def is_legal(card: dict) -> bool:
     if card["oversized"] or "legalities" not in card:
         return False
 
-    return any((l == "legal" for l in card["legalities"].values()))
+    return any((l != "not_legal" for l in card["legalities"].values()))
 
 def main() -> None:
     bulk_data = requests.get("https://api.scryfall.com/bulk-data/oracle-cards").json()
