@@ -6,7 +6,7 @@ rm -rf .parcel-cache/ dist/
 mkdir /tmp/mtgdeploy
 
 python3 scripts/process.py src/cards.json
-npx parcel build --no-source-maps --dist-dir /tmp/mtgdeploy src/index.html
+npx parcel build --no-source-maps --dist-dir /tmp/mtgdeploy --public-url ./ src/index.html
 rm src/cards.json
 
 git checkout gh-pages
