@@ -19,7 +19,8 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
-      - run: pip install requests
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
       - name: Download cards
         run: python3 scripts/process.py src/cards.json
       - name: Setup Node
@@ -27,6 +28,8 @@ jobs:
         with:
           node-version: 19
           cache: 'npm'
+      - name: Install Node dependencies
+        run: npm i
       - name: Lint
         run: npx eslint src/*.vue src/*.js
       - name: Build
