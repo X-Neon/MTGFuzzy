@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
-      - run: pip3 install requests
+      - run: pip install requests
       - name: Download cards
         run: python3 scripts/process.py src/cards.json
       - name: Setup Node
