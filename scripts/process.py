@@ -1,7 +1,7 @@
 import json
 import requests
 from typing import List
-import sys
+from datetime import datetime
 
 
 def get_card_image_uris(card: dict) -> List[str]:
@@ -28,8 +28,11 @@ def main() -> None:
     legal_cards = [c for c in cards if is_legal(c)]
     names = [{"name": c["name"], "uri": c["scryfall_uri"], "image": get_card_image_uris(c)} for c in legal_cards]
 
-    with open(sys.argv[1], "w") as f:
+    with open("src/cards.json", "w") as f:
         json.dump(names, f)
+
+    with open("src/modified.json", "w") as f:
+        json.dump({"date": datetime.now().strftime("%d/%m/%y")}, f)
 
 
 if __name__ == "__main__":

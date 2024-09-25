@@ -6,6 +6,7 @@
     --separator: lightgray;
     --text: black;
     --shadow: gray;
+    --soft-text: hsl(223, 12%, 60%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,18 +18,31 @@
         --separator: #6e6e6e;
         --text: white;
         --shadow: #060606;
+        --soft-text: hsl(0, 0%, 40%);
     }
 }
 
 html {
-    min-height: 100%;
     color: var(--text);
 }
 
 body {
     background-color: var(--bg);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    padding: 1rem;
+    color: var(--soft-text);
+    text-align: right;
 }
 
 .card-area {

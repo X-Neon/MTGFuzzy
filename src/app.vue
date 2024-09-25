@@ -15,10 +15,13 @@
             </div>
         </div>
     </main>
+    <footer>Last updated: {{ modified_date }}</footer>
 </template>
 
 <script>
+    import "./app.css";
     import { Fzf, byLengthAsc } from "fzf";
+    import modified_date from "./modified.json";
     let cards = new URL("cards.json", import.meta.url);
     let back = new URL("back.jpg", import.meta.url);
 
@@ -30,7 +33,8 @@
                 fzf: null,
                 search: "",
                 selected: 0,
-                image_timeout: [back]
+                image_timeout: [back],
+                modified_date: modified_date.date
             };
         },
         computed: {
@@ -100,5 +104,3 @@
         }
     };
 </script>
-
-<style src="./app.css"></style>

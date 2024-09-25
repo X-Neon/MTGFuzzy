@@ -23,7 +23,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
       - name: Download cards
-        run: python3 scripts/process.py src/cards.json
+        run: python3 scripts/process.py
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
